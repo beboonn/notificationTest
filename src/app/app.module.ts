@@ -6,13 +6,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { NotiPage } from '../pages/noti/noti';
 
-import { LocalNotifications } from '@ionic-native/local-notifications';
+import { FCM } from '@ionic-native/fcm';
+// import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    NotiPage
   ],
   imports: [
     BrowserModule,
@@ -21,12 +24,14 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    NotiPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    LocalNotifications,
+    // LocalNotifications,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
